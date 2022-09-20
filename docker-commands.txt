@@ -1,0 +1,34 @@
+
+
+
+# Run source container
+
+docker run --gpus all -it --rm --net=host --privileged -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-6.0 nvcr.io/nvidia/deepstream:6.0-triton
+
+# Run owned container
+
+docker run --gpus all -it --rm --net=host --privileged -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-6.0 edgardaon/nvidia-deepstream-6.0-triton:latest
+
+# Container management
+
+	## Start container
+	
+	docker start CONTAINER ID
+	
+	## Stop container
+	
+	docker stop CONTAINER ID
+	
+	## Exit container without stopping it
+
+	Ctrl + P + Q
+
+	## Return to alive container
+
+	docker attach CONTAINER ID
+
+# Inside container run this command to have access to jupyter:
+
+jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --notebook-dir=/opt/nvidia/deepstream/deepstream --NotebookApp.allow_origin='*'
+
+
