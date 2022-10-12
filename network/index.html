@@ -196,7 +196,7 @@
 <h1 id="neural-networks">Neural Networks</h1>
 <p>In this part of the project the neural networks are divided in two parts, the detector network and the classifier network. The detector network is capable of identifing the traffic signs of the road, crop the traffic sign frame and send the cropped image to the classifier, so that the classifier model classifies the roadsign and send it to the Broker MQTT. </p>
 <p>All these steps are shown in the figure below:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="/images/networks.png"><img alt="Neural Networks Architecture" src="/images/networks.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/networks.png?raw=true"><img alt="Neural Networks Architecture" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/networks.png?raw=true"/></a></p>
 <h2 id="detector">Detector</h2>
 <p>The detector network detects one or more physical objects from four categories within an image and returns a box around each object, as well as a category label for each object. </p>
 <p>The four categories of objects detected by this model are: </p>
@@ -209,14 +209,14 @@
 <p>This model is called <a href="" title="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/trafficcamnet">TrafficCamNet</a>, this model can be found on the <a href="" title="https://catalog.ngc.nvidia.com/">Nvidia GPU Cloud Catalog</a> and it is based on the Nvidia DetectNet_v2 and the ResNet18. The TrafficCamNet returns a balding-box with the confidence detections of the object, so that the user can see what the model detects. </p>
 <p>All these features can be seen in the video below:</p>
 <video controls="" height="240" width="480">
-<source src="/videos/trafficcamnet.webm" type="video/webm"/>
+<source src="https://raw.githubusercontent.com/pfeinsper/NVIDIA/gh-pages/videos/trafficcamnet.webm"/>
 </video>
 <h2 id="classifier">Classifier</h2>
-<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="/images/lenet.png"><img align="right" alt="LeNet5 Topology" src="/images/lenet.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/lenet.png?raw=true"><img align="right" alt="LeNet5 Topology" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/lenet.png?raw=true"/></a></p>
 <p>The classifier model is based on <a href="" title="https://towardsdatascience.com/recognizing-traffic-signs-with-over-98-accuracy-using-deep-learning-86737aedc2ab">Eddie Forson</a> article, that provides a 98% accuracy for traffic sign classifications with germany traffic signs. As the project needs to classify brazzilian traffic signs, the best option was to use a Transfer Learning with the Eddie Forson model that uses the <a href="" title="https://towardsdatascience.com/understanding-and-implementing-lenet-5-cnn-architecture-deep-learning-a2d531ebc342">LeNet5</a> as a CNN (Convolutional Neural Network) to be able to train the model with brazilian traffic signs insteat of using the germany ones. </p>
 <p>In the video below you can see the result of the LeNet5 classifier:</p>
 <video controls="" height="360" width="360">
-<source src="/videos/lenettest.mp4"/>
+<source src="https://raw.githubusercontent.com/pfeinsper/NVIDIA/gh-pages/videos/lenettest.mp4"/>
 </video>
 </article>
 </div>
