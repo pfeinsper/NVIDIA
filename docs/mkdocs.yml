@@ -1,19 +1,28 @@
 site_name: Nvidia HPC Autopilot
+repo_name: pfeinsper/NVIDIA
+repo_url: https://github.com/pfeinsper/NVIDIA
+
 theme:
   name: material
-  palette: 
 
-    # Palette toggle for light mode
+  palette:
     - scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
     - scheme: slate
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+
   icon:
     admonition:
       note: octicons/tag-16
@@ -28,7 +37,23 @@ theme:
       bug: octicons/bug-16
       example: octicons/beaker-16
       quote: octicons/quote-16
+      repo: fontawesome/brands/git-alt 
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
+plugins:
+  - glightbox
+
+nav:
+    - Getting Started: index.md
+    - Autopilot: autopilot.md
+    - Control: control.md
+    - Neural Networks: network.md
+    - Broker MQTT: mqtt.md
+    - Reference: reference.md
+    
