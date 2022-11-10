@@ -13,11 +13,11 @@ docker run --gpus all -it --rm --net=host --privileged -v /tmp/.X11-unix:/tmp/.X
 
 	## Start container
 	
-	docker start CONTAINER ID
+	docker start CONTAINER_ID
 	
 	## Stop container
 	
-	docker stop CONTAINER ID
+	docker stop CONTAINER_ID
 	
 	## Exit container without stopping it
 
@@ -25,10 +25,14 @@ docker run --gpus all -it --rm --net=host --privileged -v /tmp/.X11-unix:/tmp/.X
 
 	## Return to alive container
 
-	docker attach CONTAINER ID
+	docker attach CONTAINER_ID
+
+	## To duplicate terminals on docker
+
+	docker exec -ti CONTAINER_ID /bin/bash
+
 
 # Inside container run this command to have access to jupyter:
 
 jupyter-lab --no-browser --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token='' --notebook-dir=/opt/nvidia/deepstream/deepstream --NotebookApp.allow_origin='*'
-
 
