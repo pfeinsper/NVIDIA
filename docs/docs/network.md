@@ -40,9 +40,11 @@ After downloading these files you need to create a `config_primary.txt` file wit
 [property]
 gpu-id=0
 net-scale-factor=0.0039215697906911373
-model-engine-file=ETLT_MODEL_FILE_PATH
-labelfile-path=LABELS_FILE_PATH
-int8-calib-file=CALIBRATION_FILE_PATH
+int8-calib-file=<Path to optional INT8 calibration cache>
+labelfile-path=<Path to labels.txt>
+tlt-encoded-model=<Path to ETLT model>
+tlt-model-key=<Key to decrypt the model>
+infer-dims=c;h;w # where c = number of channels, h = height of the model input, w = width of model input
 force-implicit-batch-dim=1
 batch-size=1
 network-mode=1
