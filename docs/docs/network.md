@@ -24,7 +24,7 @@ The notebook from our project is on Github on this link:
 
 ## Model Usage
 
-If you want to just use our model, you can just download these files below on your Jetson device, on the other hand, if you want to build your own model you can follow the Detailed Transfer learning section below.:
+If you want to just use our model, you can just download these files below on your Jetson device, on the other hand, if you want to build your own model you can follow the Detailed Transfer learning section below:
 
 | Files            | Links                                |
 | ----------- -----| ------------------------------------ |
