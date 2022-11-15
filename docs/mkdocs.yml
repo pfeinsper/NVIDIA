@@ -54,6 +54,7 @@ nav:
     - Getting Started: index.md
     - Autopilot: autopilot.md
     - Control: control.md
+    - Dataset: dataset.md
     - Neural Networks: network.md
     - Broker MQTT: mqtt.md
     - Reference: reference.md
