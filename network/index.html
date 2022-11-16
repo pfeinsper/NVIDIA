@@ -230,7 +230,7 @@
 <p>The section that explains the detailed transfer learning you can run in your own computer. But the section of the Model Usage is executed on the docker container mentioned on the Usage page.</p>
 </div>
 <h2 id="model-overview">Model Overview</h2>
-<p>This neural network model is based on a object detection model from Nvidia GPU Cloud called <a href="" title="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/dashcamnet">DashCamNet</a>, which is built based on Nvidia <a href="" title="https://catalog.ngc.nvidia.com/orgs/nvidia/resources/tao_detectnet">DetectNet_v2</a> detector which uses ResNet18 and since it is a object detection model, the output is a bounding-box on the input image surrounding the object detected, the bouding-box is predicted by calculating the x center, y center, width and height from the object, not to mention the confidence value from the output class is returned as well.</p>
+<p>This neural network model is based on a object detection model from Nvidia GPU Cloud called <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/dashcamnet">DashCamNet</a>, which is built based on Nvidia <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/resources/tao_detectnet">DetectNet_v2</a> detector which uses ResNet18 and since it is a object detection model, the output is a bounding-box on the input image surrounding the object detected, the bouding-box is predicted by calculating the x center, y center, width and height from the object, not to mention the confidence value from the output class is returned as well.</p>
 <p>The model classes identified are:</p>
 <ul>
 <li>pare (Indicating the stop sign)</li>
@@ -238,11 +238,11 @@
 <li>60 (Indicating the 60km/h traffic sign)</li>
 </ul>
 <h2 id="building-the-model">Building the model</h2>
-<p>The model was created using the transfer learning toolkit from Nvidia called <a href="" title="https://developer.nvidia.com/tao-toolkit">TAO Toolkit</a> with a <a href="" title="https://roboflow.com/">Roboflow Dataset</a>. The raise of the dataset is documented on the <a href="" title="">Dataset</a> section. The main reference used for the traffic sign detector was based on an article called <a href="" title="https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/">Building Custom Computer Vision Models with NVIDIA TAO Toolkit and Roboflow</a> and a repository <a href="" title="https://github.com/roboflow-ai/tao-toolkit-with-roboflow">tao-toolkit-with-roboflow</a> which used TAO toolkit to create a yolo_v4 based model using transfer learning.</p>
+<p>The model was created using the transfer learning toolkit from Nvidia called <a href="https://developer.nvidia.com/tao-toolkit">TAO Toolkit</a> with a <a href="https://roboflow.com/">Roboflow Dataset</a>. The raise of the dataset is documented on the <a href="">Dataset</a> section. The main reference used for the traffic sign detector was based on an article called <a href="https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/">Building Custom Computer Vision Models with NVIDIA TAO Toolkit and Roboflow</a> and a repository <a href="https://github.com/roboflow-ai/tao-toolkit-with-roboflow">tao-toolkit-with-roboflow</a> which used TAO toolkit to create a yolo_v4 based model using transfer learning.</p>
 <p>In our case the steps were the same but the neural networks detector used was DetectNet_v2 instead of yolo_v4.</p>
 <p>The notebook from our project is on Github on this link:</p>
 <ul>
-<li><strong><a href="" title="https://github.com/pfeinsper/NVIDIA/blob/main/transfer-learning/transfer_learning_tutorial.ipynb">Project Notebook</a></strong></li>
+<li><strong><a href="https://github.com/pfeinsper/NVIDIA/blob/main/transfer-learning/transfer_learning_tutorial.ipynb">Project Notebook</a></strong></li>
 </ul>
 <h2 id="model-usage">Model Usage</h2>
 <p>If you want to just use our model, you can just download these files below on your Jetson device, on the other hand, if you want to build your own model you can follow the Detailed Transfer learning section below:</p>
@@ -256,19 +256,19 @@
 <tbody>
 <tr>
 <td>Etlt model</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 <tr>
 <td>Labels file</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 <tr>
 <td>Calibration file</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 <tr>
 <td>Engine file</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 </tbody>
 </table>
@@ -658,8 +658,8 @@ group-threshold=1
 <h2 id="detailed-transfer-learning">Detailed Transfer Learning</h2>
 <p>Since you want to build a custom model by yourself you can follow the notebooks from the links below and download the files referenced, so that you can follow the correct steps:</p>
 <ul>
-<li><a href="" title="https://github.com/roboflow-ai/tao-toolkit-with-roboflow">tao-toolkit-with-roboflow</a> </li>
-<li><a href="" title="https://github.com/pfeinsper/NVIDIA/blob/main/transfer-learning/transfer_learning_tutorial.ipynb">Jetbot transfer learning</a></li>
+<li><a href="https://github.com/roboflow-ai/tao-toolkit-with-roboflow">tao-toolkit-with-roboflow</a> </li>
+<li><a href="https://github.com/pfeinsper/NVIDIA/blob/main/transfer-learning/transfer_learning_tutorial.ipynb">Jetbot transfer learning</a></li>
 </ul>
 <table>
 <thead>
@@ -671,19 +671,19 @@ group-threshold=1
 <tbody>
 <tr>
 <td>experiment_spec.json</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">"https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J"</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 <tr>
 <td>detectnet_v2_inference.txt</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">"https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J"</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 <tr>
 <td>detectnet_v2_inference_etlt</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">"https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J"</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 <tr>
 <td>detectnet_v2_retrain_resnet18</td>
-<td><a href="" title="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">"https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J"</a></td>
+<td><a href="https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J">https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J</a></td>
 </tr>
 </tbody>
 </table>
