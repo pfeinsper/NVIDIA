@@ -1,0 +1,9 @@
+opencv-python
+numpy
+matplotlib
+sklearn
+paho-mqtt
+ipywidgets
+pandas
+nvidia-tao
+roboflow

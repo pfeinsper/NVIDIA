@@ -2,6 +2,10 @@
 
 In this part of the project the neural networks system is basically a detector. This detector network is capable of identifing the traffic signs of the road, crop the traffic sign frame and classify it as a specific class, so that the network model classifies and detects the roadsign and send the information to the Broker MQTT that comunicates with the robot infinite state machine. 
 
+!!! danger "REMEMBER"
+
+    The section that explains the detailed transfer learning you can run in your own computer. But the section of the Model Usage is executed on the docker container mentioned on the Usage page.
+
 ## Model Overview
 
 This neural network model is based on a object detection model from Nvidia GPU Cloud called [DashCamNet]("https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/dashcamnet"), which is built based on Nvidia [DetectNet_v2]("https://catalog.ngc.nvidia.com/orgs/nvidia/resources/tao_detectnet") detector which uses ResNet18 and since it is a object detection model, the output is a bounding-box on the input image surrounding the object detected, the bouding-box is predicted by calculating the x center, y center, width and height from the object, not to mention the confidence value from the output class is returned as well.
