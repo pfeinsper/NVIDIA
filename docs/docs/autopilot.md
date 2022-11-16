@@ -26,8 +26,8 @@ For this algorithm of the autopilot we have two examples, one using the Broker M
 
 You can find these algorithms on this links below:
 
-- [Computer Vision using Broker MQTT]("https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/main.py")
-- [Just the Computer Vision algorithm]("https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/lanedetector.py")
+- [Computer Vision using Broker MQTT](https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/main.py)
+- [Just the Computer Vision algorithm](https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/lanedetector.py)
 
 ## Running the autopilot
 

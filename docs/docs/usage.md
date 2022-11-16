@@ -38,7 +38,7 @@ It is important to change the IP ADDRESS from the notebook file on `jetbot` fold
 
 On Github you can see it on this link:
 
-[https://github.com/pfeinsper/NVIDIA/blob/main/jetbot/fsm/mqtt.ipynb]("https://github.com/pfeinsper/NVIDIA/blob/main/jetbot/fsm/mqtt.ipynb")
+[https://github.com/pfeinsper/NVIDIA/blob/main/jetbot/fsm/mqtt.ipynb](https://github.com/pfeinsper/NVIDIA/blob/main/jetbot/fsm/mqtt.ipynb)
 
 ```bash
 cd jetbot/fsm
@@ -67,11 +67,11 @@ python3 lanedetector.py
 
 In this part of the tutorial you will need to install docker ad nvidia-docker, for this you can use the reference below:
 
-[https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html]("https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html")
+[https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html](https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html)
 
 The docker image that you will need for the project is located on DockerHub on this link below:
 
-[https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton]("https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton")
+[https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton](https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton)
 
 ```bash
 # docker run --gpus -it --rm --net=host -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -w --privileged IMAGEM
@@ -105,7 +105,7 @@ Now you will need to run the DeepStream python code that executes the traffic si
 
 | Location            | Link                                |
 | --------------------|-------------------------------------|
-| Google Drive        |  [https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J]("https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J")|
+| Google Drive        |  [https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J](https://drive.google.com/drive/folders/1TCEeig-Y4BD1gVVE5CkSWjv4DcaY7r4J)|
 
 After this you can move these files to their directories from the docker container using the command below:
 
