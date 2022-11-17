@@ -5,7 +5,7 @@
   <h1>Nvidia HPC Autopilot</h1>
 </div>
 
-This is an open-source project of a MVP (Minimum Valiable Product) of a autonomous car using [Jetson Nano](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/) that respects brazilian traffic signs and integrates some Nvidia tools, such as [DeepStream SDK](https://developer.nvidia.com/deepstream-sdk), [Nvidia GPU Cloud](https://www.nvidia.com/en-us/gpu-cloud/), [TensorRT]("https://developer.nvidia.com/tensorrt"), [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit), [Triton](https://developer.nvidia.com/nvidia-triton-inference-server) and [Jetbot](https://jetbot.org/master/) as the main tool for the project.
+This is an open-source project of a MVP (Minimum Valiable Product) of a autonomous car using [Jetson Nano](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/) that respects brazilian traffic signs and integrates some Nvidia tools, such as [DeepStream SDK](https://developer.nvidia.com/deepstream-sdk), [Nvidia GPU Cloud](https://www.nvidia.com/en-us/gpu-cloud/), [TensorRT](https://developer.nvidia.com/tensorrt), [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit), [Triton](https://developer.nvidia.com/nvidia-triton-inference-server) and [Jetbot](https://jetbot.org/master/) as the main tool for the project.
 
 ## Project Architecture
 
