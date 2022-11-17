@@ -54,10 +54,10 @@ nav:
     - Getting Started: index.md
     - Usage: usage.md
     - Autopilot: autopilot.md
-    - Control: control.md
     - Dataset: dataset.md
     - Neural Networks: network.md
     - Broker MQTT: mqtt.md
+    - Docker Setup: docker_setup.md
     - Reference: reference.md
 
 

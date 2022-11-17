@@ -2,7 +2,7 @@
 
 ![Jetbot](https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/jetbot.png?raw=true){ align=left }
 
-This is an open-source project of a MVP (Minimum Valiable Product) of a autonomous car using [Jetson Nano](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/) that respects brazilian traffic signs and integrates some Nvidia tools, such as [DeepStream SDK](https://developer.nvidia.com/deepstream-sdk), [Nvidia GPU Cloud](https://www.nvidia.com/en-us/gpu-cloud/), [TensorRT]("https://developer.nvidia.com/tensorrt"), [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit), [Triton](https://developer.nvidia.com/nvidia-triton-inference-server) and [Jetbot](https://jetbot.org/master/) as the main tool for the project. 
+This is an open-source project of a MVP (Minimum Valiable Product) of a autonomous car using [Jetson Nano](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/) that respects brazilian traffic signs and integrates some Nvidia tools, such as [DeepStream SDK](https://developer.nvidia.com/deepstream-sdk), [Nvidia GPU Cloud](https://www.nvidia.com/en-us/gpu-cloud/), [TensorRT](https://developer.nvidia.com/tensorrt), [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit), [Triton](https://developer.nvidia.com/nvidia-triton-inference-server) and [Jetbot](https://jetbot.org/master/) as the main tool for the project. 
 
 The main focus is to share this project with the community of developers so that can it be used as a starter for a autonomous vehicle or other robotics and computer vision projects.
 

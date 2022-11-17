@@ -134,10 +134,23 @@ Available in:
 
  [https://github.com/abuelgasimsaadeldin/Jetbot-Road-Following-and-Collision-Avoidance](https://github.com/abuelgasimsaadeldin/Jetbot-Road-Following-and-Collision-Avoidance) 
 
-### TIPOS DE SINAIS DE TR NSITO BRASILEIRO
+### TIPOS DE SINAIS DE TRÂNSITO BRASILEIRO
 
 Artigo 87 do Código de trânsito brasileiro. 
 
 Available in:
 
  [https://www.jusbrasil.com.br/topicos/10617139/artigo-87-da-lei-n-9503-de-23-de-setembro-de-1997](https://www.jusbrasil.com.br/topicos/10617139/artigo-87-da-lei-n-9503-de-23-de-setembro-de-1997)
+
+
+### DEEPSTREAM_PYTHON_APPS REPOSITORY
+
+Available in:
+
+[https://github.com/NVIDIA-AI-IOT/deepstream_python_apps](https://github.com/NVIDIA-AI-IOT/deepstream_python_apps)
+
+### DEEPSTREAM CONTAINER FOR DOCKER SETUP
+
+Available in:
+
+[https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream-l4t](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream-l4t)
