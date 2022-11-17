@@ -122,11 +122,6 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../control/">
-        Control
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../dataset/">
         Dataset
       </a>
@@ -172,6 +167,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../mqtt/">
         Broker MQTT
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docker_setup/">
+        Docker Setup
       </a>
 </li>
 <li class="md-nav__item">
@@ -273,28 +273,32 @@
 </tbody>
 </table>
 <p>After downloading these files you need to create a <code>config_primary.txt</code> file with the content below:</p>
-<div class="highlight"><pre><span></span><code>[property]
-gpu-id=0
+<div class="highlight"><pre><span></span><code>gpu-id=0
 net-scale-factor=0.0039215697906911373
+model-engine-file=&lt;Path to the model engine file&gt;
 int8-calib-file=&lt;Path to optional INT8 calibration cache&gt;
 labelfile-path=&lt;Path to labels.txt&gt;
 tlt-encoded-model=&lt;Path to ETLT model&gt;
 tlt-model-key=&lt;Key to decrypt the model&gt;
-infer-dims=c;h;w # where c = number of channels, h = height of the model input, w = width of model input
-force-implicit-batch-dim=1
+infer-dims=3;640;640
+uff-input-order=0
+uff-input-blob-name=input_1
 batch-size=1
+process-mode=1
+model-color-format=0
+## 0=FP32, 1=INT8, 2=FP16 mode
 network-mode=1
 num-detected-classes=3
 interval=0
 gie-unique-id=1
-output-blob-names=conv2d_bbox;conv2d_cov/Sigmoid
-#scaling-filter=0
-#scaling-compute-hw=0
+output-blob-names=output_bbox/BiasAdd;output_cov/Sigmoid
 
 [class-attrs-all]
 pre-cluster-threshold=0.2
-eps=0.2
 group-threshold=1
+## Set eps=0.7 and minBoxes for cluster-mode=1(DBSCAN)
+eps=0.2
+#minBoxes=3
 </code></pre></div>
 <p>Create a python file called <code>deepstream_usb_camera_with_custom_model.py</code> to run the model:</p>
 <div class="admonition danger">
@@ -655,6 +659,8 @@ group-threshold=1
 <p><strong>Normally you can test it using <code>/dev/video0</code> for the usb camera path</strong></p>
 <div class="highlight"><pre><span></span><code>python3 deepstream_usb_camera_with_custom_model.py /dev/<span class="o">{</span>USB_CAMERA_VIDEO_PATH<span class="o">}</span>
 </code></pre></div>
+<p>After the algorithm execution you should see a new window like the image below:</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/custom_model.jpeg?raw=true"><img alt="Custom Model" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/custom_model.jpeg?raw=true"/></a></p>
 <h2 id="detailed-transfer-learning">Detailed Transfer Learning</h2>
 <p>Since you want to build a custom model by yourself you can follow the notebooks from the links below and download the files referenced, so that you can follow the correct steps:</p>
 <ul>
