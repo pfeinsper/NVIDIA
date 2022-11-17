@@ -20,7 +20,7 @@ From this code, Jetbot provides three parameters from the robot motors:
 
 Using the computer vision algorithm with the asynchronous message broker the Jetbot interacts with the motors using the parameters sent by the algorithm. 
 
-**[Image from line detector algorithm]()**
+![Autopilot Algorithm](https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/lane_detector.png?raw=true)
 
 For this algorithm of the autopilot we have two examples, one using the Broker MQTT to comunicate with the robot and other that uses just the camera to identify the middle line from the road and preview the commands that the robot should follow, but it doesn`t comunicate with the robot motors.
 

@@ -40,29 +40,32 @@ If you want to just use our model, you can just download these files below on yo
 After downloading these files you need to create a `config_primary.txt` file with the content below:
 
 ```txt
-
-[property]
 gpu-id=0
 net-scale-factor=0.0039215697906911373
+model-engine-file=<Path to the model engine file>
 int8-calib-file=<Path to optional INT8 calibration cache>
 labelfile-path=<Path to labels.txt>
 tlt-encoded-model=<Path to ETLT model>
 tlt-model-key=<Key to decrypt the model>
-infer-dims=c;h;w # where c = number of channels, h = height of the model input, w = width of model input
-force-implicit-batch-dim=1
+infer-dims=3;640;640
+uff-input-order=0
+uff-input-blob-name=input_1
 batch-size=1
+process-mode=1
+model-color-format=0
+## 0=FP32, 1=INT8, 2=FP16 mode
 network-mode=1
 num-detected-classes=3
 interval=0
 gie-unique-id=1
-output-blob-names=conv2d_bbox;conv2d_cov/Sigmoid
-#scaling-filter=0
-#scaling-compute-hw=0
+output-blob-names=output_bbox/BiasAdd;output_cov/Sigmoid
 
 [class-attrs-all]
 pre-cluster-threshold=0.2
-eps=0.2
 group-threshold=1
+## Set eps=0.7 and minBoxes for cluster-mode=1(DBSCAN)
+eps=0.2
+#minBoxes=3
 ```
 
 Create a python file called `deepstream_usb_camera_with_custom_model.py` to run the model:
@@ -430,6 +433,10 @@ Finally you can run the python specifing the config file and the usb camera path
 ```bash
 python3 deepstream_usb_camera_with_custom_model.py /dev/{USB_CAMERA_VIDEO_PATH}
 ```
+
+After the algorithm execution you should see a new window like the image below:
+
+![Custom Model](https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/custom_model.jpeg?raw=true)
 
 ## Detailed Transfer Learning
 

@@ -2,7 +2,15 @@
 
 This page section just shows how to run the project the fastest way possible on your JetBot.
 
-At first you need to follow the setup from the Getting Started page, since you`ve installed the JetPack OS 4.6.1, JetBot 0.4.3 and all the JetBot construction, the next step is to clone the our Github repository:
+!!! warning
+
+    If you want to use the robot remotely, you need to use `SSH` connection to your Jetbot: 
+    
+    ```bash
+    ssh jetbot@{JETBOT_IP_ADDRESS}
+    ```
+
+At first you need to follow the setup from the Getting Started page, since you`ve installed the JetPack OS 4.6.1, JetBot 0.4.3 and all the JetBot construction, the next step is to clone our Github repository:
 
 ```bash
 git clone https://github.com/pfeinsper/NVIDIA
@@ -11,6 +19,21 @@ git clone https://github.com/pfeinsper/NVIDIA
 ```
 cd NVIDIA/
 ```
+
+After this step you will need to use `screen`, a terminal manager that allows you to execute multiple terminals at the same time.
+
+```bash
+#screen installation
+sudo apt-get install screen
+
+#after this run
+screen
+```
+
+If you've never used `screen` before, you can follow this tutorial on how to use it:
+
+[https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/](https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/)
+
 
 Then you need to clone the camera image source to other two sources, using both `/dev/video0`, `/dev/video1` and `/dev/video2`. For this step you need to install `ffmpeg` dependency.
 
@@ -27,7 +50,7 @@ ffmpeg -f video4linux2 -i /dev/video0 -codec copy -f v4l2 /dev/video1 -codec cop
 ```
 
 ```bash
-cd mqtt-example/
+cd pfe/mqtt/
 ```
 
 ```bash
@@ -40,12 +63,7 @@ On Github you can see it on this link:
 
 [https://github.com/pfeinsper/NVIDIA/blob/main/jetbot/fsm/mqtt.ipynb](https://github.com/pfeinsper/NVIDIA/blob/main/jetbot/fsm/mqtt.ipynb)
 
-```bash
-cd jetbot/fsm
-
-#open jupyter notebook
-jupyter notebook
-```
+To use this notebook file you need to copy the `mqtt.ipynb` to the jetbot directory, so to do it you need to open your browser on the `IP_ADDRESS:8888/` page and import the notebook referenced above on Github.
 
 Access the `mqtt.ipynb` and change the broker variable that identifies the IP ADDRESS to your current IP ADDRESS
 
@@ -65,7 +83,7 @@ python3 lanedetector.py
 
 ## Using docker container
 
-In this part of the tutorial you will need to install docker ad nvidia-docker, for this you can use the reference below:
+In this part of the tutorial you will need to install nvidia-docker, for this you can use the reference below:
 
 [https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html](https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html)
 
@@ -74,8 +92,9 @@ The docker image that you will need for the project is located on DockerHub on t
 [https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton](https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton)
 
 ```bash
-# docker run --gpus -it --rm --net=host -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -w --privileged IMAGEM
+docker run -it --net=host --runtime nvidia --privileged -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-6.0 -v /tmp/.X11-unix/:/tmp/.X11-unix -v /tmp/argus_socket:/tmp/argus_socket edgardaon/jetson-deepstream-6.0-triton:version1.1 /bin/bash
 ```
+
 !!! note
     If you had quit from the docker image, you can restart it and attach to restore all you have already done, using the commands below:
 
@@ -86,6 +105,9 @@ The docker image that you will need for the project is located on DockerHub on t
     #attach the container
     docker attach CONTAINER_ID
     ```
+
+!!! warning
+    If you want to do your own docker setup you can follow the Docker Setup page 
 
 After you run the docker container you need to clone the project repository again:
 
