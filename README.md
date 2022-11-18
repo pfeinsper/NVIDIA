@@ -1,6 +1,6 @@
 <div align="center">
   <a src="https://www.nvidia.com/en-us/">
-    <img src="https://github.com/pfeinsper/NVIDIA/blob/main/docs/docs/images/Vertical_Logo/NV_Logo_2D.png?raw=true" height="100"/>
+    <img src="https://github.com/pfeinsper/NVIDIA/blob/main/docs/docs/images/Vertical_Logo/NVLogo_2D.png?raw=true" height="100"/>
   </a>
   <h1>Nvidia HPC Autopilot</h1>
 </div>
