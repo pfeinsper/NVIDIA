@@ -4,8 +4,8 @@ repo_url: https://github.com/pfeinsper/NVIDIA
 
 theme:
   name: material
-  logo: assets/NV_Logo_2D.png
-  favicon: assets/NV_Logo_2D.png
+  logo: assets/NVLogo_2D.png
+  favicon: assets/NVLogo_2D.png
 
   palette:
     - scheme: default
