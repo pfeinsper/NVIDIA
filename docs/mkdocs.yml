@@ -4,6 +4,8 @@ repo_url: https://github.com/pfeinsper/NVIDIA
 
 theme:
   name: material
+  logo: assets/NV_Logo_2D.png
+  favicon: assets/NV_Logo_2D.png
 
   palette:
     - scheme: default
@@ -21,7 +23,6 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.png
 
   icon:
     admonition:
