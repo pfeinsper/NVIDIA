@@ -6,7 +6,7 @@ from paho.mqtt import client as mqtt_client
 import random
 
 
-broker = '10.102.30.249'
+broker = '127.0.0.1'
 port = 1884
 topic = "python/mqtt"
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
@@ -40,15 +40,29 @@ client.loop_start()
 class LaneDetector:
     def __init__(self):
         # self.video_path = video_path
-        self.cap = cv2.VideoCapture(0)
+        v4l2path = 2
+        self.cap = cv2.VideoCapture(v4l2path)
+        print(f"Capturing from /dev/video{v4l2path}")
         self.frame = None
         self.mask = None
+        self.lut = None
         self.contours = None
         self.m = None
         self.p1 = None
         self.p2 = None
         self.point_center = None 
+
     def start_detector(self, draw=True):
+
+        self.lut = np.zeros(256, np.dtype('uint8'))
+        lut_min = 32
+        lut_max = 48
+        for n in range(256):
+            if n < lut_min:
+                self.lut[n] = 0
+            elif n > lut_max:
+                self.lut[n] = 255
+
         while True:
             ret, self.frame = self.cap.read()
             if not ret:
@@ -71,14 +85,23 @@ class LaneDetector:
                     cv2.line(self.frame, self.p1, self.p2, (255, 255, 0), 3)
                     cv2.line(self.frame, (self.frame.shape[1]//2, 0), (self.frame.shape[1]//2, self.frame.shape[0]), (0, 255, 39), 3)
                     
-            #cv2.imshow('frame', self.frame)
-            #cv2.imshow("mask", self.mask)
+            # cv2.imshow('frame', self.frame)
+            # cv2.imshow("mask", self.mask)
 
             if cv2.waitKey(30) & 0xFF == ord('q'): break
         self.cap.release()
         cv2.destroyAllWindows()
 
     def mask_yellow(self):
+        b,g,r = cv2.split(self.frame)
+        self.mask = cv2.addWeighted(r,0.5,g,0.5,0)
+        self.mask = cv2.addWeighted(self.mask,1.0,b,-1.0,0)
+        #cv2.imshow("mask", self.mask)
+        self.mask = cv2.LUT(self.mask, self.lut)
+        kernel = np.ones((11,11),np.uint8)
+        self.mask = cv2.morphologyEx(self.mask, cv2.MORPH_OPEN, kernel)
+
+    def old_mask_yellow(self):
         hsv = cv2.cvtColor(self.frame, cv2.COLOR_BGR2HSV)
         lower_yellow = np.array([22, 50, 50])
         upper_yellow = np.array([36, 255, 255])
@@ -88,6 +111,7 @@ class LaneDetector:
         #self.mask = cv2.blur(self.mask,(9,9))
         # kernel2 = np.ones((15,15),np.uint8)
         # self.mask = cv2.morphologyEx(self.mask, cv2.MORPH_OPEN, kernel2)
+
 
     def get_contours(self):
         contourss, _ = cv2.findContours(self.mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
@@ -135,7 +159,7 @@ class LaneDetector:
                 cv2.putText(self.frame, f'TURN LEFT {self.k:.3f}', (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
             elif self.k > 0:
                 cv2.putText(self.frame, f'TURN RIGHT {self.k:.3f}', (340, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
-        publish(client, str(self.centers[center_index][0])+ ',' + str(self.centers[center_index][1]) + ',' + str(self.k))
+        publish(client, "Vision " + str(self.centers[center_index][0])+ ',' + str(self.centers[center_index][1]) + ',' + str(self.k))
 
 if __name__ == '__main__':
     ld = LaneDetector()
