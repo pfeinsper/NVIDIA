@@ -30,13 +30,13 @@ import random
 
 import pyds
 
-PGIE_CLASS_ID_VEHICLE = 0
-PGIE_CLASS_ID_BICYCLE = 1
-PGIE_CLASS_ID_PERSON = 2
-PGIE_CLASS_ID_ROADSIGN = 3
+PGIE_CLASS_ID_PARE = 0
+PGIE_CLASS_ID_40 = 1
+PGIE_CLASS_ID_60 = 2
 
 
-broker = '10.102.30.249'
+
+broker = '127.0.0.1'                                                                                              
 port = 1884
 topic = "python/mqtt"
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
@@ -69,10 +69,9 @@ def osd_sink_pad_buffer_probe(pad,info,u_data):
     frame_number=0
     #Intiallizing object counter with 0.
     obj_counter = {
-        PGIE_CLASS_ID_VEHICLE:0,
-        PGIE_CLASS_ID_PERSON:0,
-        PGIE_CLASS_ID_BICYCLE:0,
-        PGIE_CLASS_ID_ROADSIGN:0
+        PGIE_CLASS_ID_PARE:0,
+        PGIE_CLASS_ID_40:0,
+        PGIE_CLASS_ID_60:0
     }
     num_rects=0
     x_left = 0
@@ -80,7 +79,8 @@ def osd_sink_pad_buffer_probe(pad,info,u_data):
     y_top = 0
     y_bottom = 0 
     area = 0
-    roadsign_detected = 0
+    roadsign_id = -1
+    roadsign_detected = -1
 
     gst_buffer = info.get_buffer()
     if not gst_buffer:
@@ -135,18 +135,37 @@ def osd_sink_pad_buffer_probe(pad,info,u_data):
 
         #py_nvosd_text_params.display_text = "Frame Number={}  Number of Objects={} Vehicle_count={} Person_count={} RoadSign_count={}".format(frame_number, num_rects, obj_counter[PGIE_CLASS_ID_VEHICLE], obj_counter[PGIE_CLASS_ID_PERSON], obj_counter[PGIE_CLASS_ID_ROADSIGN])
         
-        if obj_counter[PGIE_CLASS_ID_ROADSIGN] > 0:
+        if obj_counter[PGIE_CLASS_ID_PARE] > 0 :
+            roadsign_id = int(obj_meta.object_id)
             x_left = int(obj_meta.rect_params.left)
             x_right = int(obj_meta.rect_params.left + obj_meta.rect_params.width)
             y_top = int(obj_meta.rect_params.top)
             y_bottom =  int(obj_meta.rect_params.top + obj_meta.rect_params.height)
             area = abs(x_right - x_left)* abs(y_bottom - y_top)
             if area > 38000:
-                roadsign_detected = 1
+                roadsign_detected = PGIE_CLASS_ID_PARE
+        elif obj_counter[PGIE_CLASS_ID_40] > 0 :
+            roadsign_id = int(obj_meta.object_id)
+            x_left = int(obj_meta.rect_params.left)
+            x_right = int(obj_meta.rect_params.left + obj_meta.rect_params.width)
+            y_top = int(obj_meta.rect_params.top)
+            y_bottom =  int(obj_meta.rect_params.top + obj_meta.rect_params.height)
+            area = abs(x_right - x_left)* abs(y_bottom - y_top)
+            if area > 38000:
+                roadsign_detected = PGIE_CLASS_ID_40
+        elif obj_counter[PGIE_CLASS_ID_60] > 0 :
+            roadsign_id = int(obj_meta.object_id)
+            x_left = int(obj_meta.rect_params.left)
+            x_right = int(obj_meta.rect_params.left + obj_meta.rect_params.width)
+            y_top = int(obj_meta.rect_params.top)
+            y_bottom =  int(obj_meta.rect_params.top + obj_meta.rect_params.height)
+            area = abs(x_right - x_left)* abs(y_bottom - y_top)
+            if area > 38000:
+                roadsign_detected = PGIE_CLASS_ID_60
         else:
-            roadsign_detected = 0
+            roadsign_detected = -1
             
-        py_nvosd_text_params.display_text = "DeepStream {0}".format(roadsign_detected)
+        py_nvosd_text_params.display_text = "DeepStream {0},{1}".format(roadsign_detected,roadsign_id)
 
         # Now set the offsets where the string should appear
         py_nvosd_text_params.x_offset = 10

@@ -40,15 +40,26 @@ def publish(client, msg):
 class LaneDetector:
     def __init__(self):
         # self.video_path = video_path
-        self.cap = cv2.VideoCapture(0)
+        self.cap = cv2.VideoCapture(2)
         self.frame = None
         self.mask = None
+        self.lut = None
         self.contours = None
         self.m = None
         self.p1 = None
         self.p2 = None
         self.point_center = None 
     def start_detector(self, draw=True):
+
+        self.lut = np.zeros(256, np.dtype('uint8'))
+        lut_min = 32
+        lut_max = 48
+        for n in range(256):
+            if n < lut_min:
+                self.lut[n] = 0
+            elif n > lut_max:
+                self.lut[n] = 255
+
         while True:
             ret, self.frame = self.cap.read()
             if not ret:
@@ -79,6 +90,15 @@ class LaneDetector:
         cv2.destroyAllWindows()
 
     def mask_yellow(self):
+        b,g,r = cv2.split(self.frame)
+        self.mask = cv2.addWeighted(r,0.5,g,0.5,0)
+        self.mask = cv2.addWeighted(self.mask,1.0,b,-1.0,0)
+        #cv2.imshow("mask", self.mask)
+        self.mask = cv2.LUT(self.mask, self.lut)
+        kernel = np.ones((11,11),np.uint8)
+        self.mask = cv2.morphologyEx(self.mask, cv2.MORPH_OPEN, kernel)
+
+    def old_mask_yellow(self):
         hsv = cv2.cvtColor(self.frame, cv2.COLOR_BGR2HSV)
         lower_yellow = np.array([22, 50, 50])
         upper_yellow = np.array([36, 255, 255])
@@ -139,4 +159,4 @@ class LaneDetector:
 
 if __name__ == '__main__':
     ld = LaneDetector()
-    ld.start_detector(draw=False)
+    ld.start_detector(draw=True)
