@@ -1,5 +1,7 @@
 # Reference
 
+___
+
 ### MORDOR INTELLIGENCE. 
 
 Available in:
@@ -154,3 +156,15 @@ Available in:
 Available in:
 
 [https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream-l4t](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/deepstream-l4t)
+
+### TAO TOOLKIT TRANSFER LEARNING USING ROBOFLOW 
+
+Available in:
+
+[https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/](https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/)
+
+### GETTING STARTED WITH TAO TOOLKIT CONTAINER
+
+Available in:
+
+[https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/resources/tao-getting-started](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/resources/tao-getting-started)

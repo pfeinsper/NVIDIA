@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/favicon.png" rel="icon"/>
+<link href="../assets/NVLogo_2D.png" rel="icon"/>
 <meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
 <title>Usage - Nvidia HPC Autopilot</title>
 <link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
@@ -39,7 +39,7 @@
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nvidia HPC Autopilot" class="md-header__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -91,7 +91,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Nvidia HPC Autopilot" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
     Nvidia HPC Autopilot
   </label>
@@ -215,13 +215,14 @@ screen
 </code></pre></div>
 <p>If you've never used <code>screen</code> before, you can follow this tutorial on how to use it:</p>
 <p><a href="https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/">https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/</a></p>
-<p>Then you need to clone the camera image source to other two sources, using both <code>/dev/video0</code>, <code>/dev/video1</code> and <code>/dev/video2</code>. For this step you need to install <code>ffmpeg</code> dependency.</p>
+<p>On one screen terminal you need to clone the camera image source to other two sources, using both <code>/dev/video0</code>, <code>/dev/video1</code> and <code>/dev/video2</code>. For this step you need to install <code>ffmpeg</code> dependency.</p>
 <div class="highlight"><pre><span></span><code>xhost +
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>sudo modprobe v4l2loopback <span class="nv">devices</span><span class="o">=</span><span class="m">2</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>ffmpeg -f video4linux2 -i /dev/video0 -codec copy -f v4l2 /dev/video1 -codec copy -f v4l2 /dev/video2
 </code></pre></div>
+<p>Opening another screen terminal you need to run this commands below.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> pfe/mqtt/
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>make broker
@@ -247,6 +248,7 @@ python3 lanedetector.py
 <p><a href="https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html">https://docs.nvidia.com/ai-enterprise/deployment-guide/dg-docker.html</a></p>
 <p>The docker image that you will need for the project is located on DockerHub on this link below:</p>
 <p><a href="https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton">https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton</a></p>
+<p>Open another screen terminal and run the docker commands.</p>
 <div class="highlight"><pre><span></span><code>docker run -it --net<span class="o">=</span>host --runtime nvidia --privileged -e <span class="nv">DISPLAY</span><span class="o">=</span><span class="nv">$DISPLAY</span> -w /opt/nvidia/deepstream/deepstream-6.0 -v /tmp/.X11-unix/:/tmp/.X11-unix -v /tmp/argus_socket:/tmp/argus_socket edgardaon/jetson-deepstream-6.0-triton:version1.1 /bin/bash
 </code></pre></div>
 <div class="admonition note">
@@ -297,7 +299,7 @@ mv config_primary.txt /opt/nvidia/deepstream/deepstream/sources/apps/deepstream_
 <div class="highlight"><pre><span></span><code><span class="c1">#here you may see all the video sources</span>
 ls /dev/video*
 </code></pre></div>
-<p>Next step is to execute another terminal with the same docker container using docker exec:</p>
+<p>Next step is to execute another screen terminal with the same docker container using docker exec:</p>
 <div class="highlight"><pre><span></span><code>docker exec -ti CONTAINER_ID /bin/bash
 </code></pre></div>
 <p>So just to be clear, now we have two terminals running the docker container, one running the broker MQTT, one cloning camera sources. So then the last step is to run the python scripts for the computer vision and the Deepstream algorithm and finally run the jupyter notebook cell that uses the finite state machine to interact with the robot.</p>

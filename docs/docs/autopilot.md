@@ -2,6 +2,8 @@
 
 For the autopilot section of the project we built a line tracker algorithm using pure computer vision. This piece of code use OpenCV and it creates a mask to identify the yellow line of the road, as long as the yellow line is detected, we use a linear regression to preview all the points that the robot should follow and by using the angle from linear regression the robot calculates the best steering gain, speed gain and derivative gain using a control equation. Finally these informations are sent on a asynchronous message broker to the robot motors.
 
+___
+
 ## Control parameters
 
 From this code, Jetbot provides three parameters from the robot motors: 
@@ -28,6 +30,8 @@ You can find these algorithms on this links below:
 
 - [Computer Vision using Broker MQTT](https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/main.py)
 - [Just the Computer Vision algorithm](https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/lanedetector.py)
+
+___
 
 ## Running the autopilot
 

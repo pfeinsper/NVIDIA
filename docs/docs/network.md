@@ -6,6 +6,8 @@ In this part of the project the neural networks system is basically a detector. 
 
     The section that explains the detailed transfer learning you can run in your own computer. But the section of the Model Usage is executed on the docker container mentioned on the Usage page.
 
+___
+
 ## Model Overview
 
 This neural network model is based on a object detection model from Nvidia GPU Cloud called [DashCamNet](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/dashcamnet), which is built based on Nvidia [DetectNet_v2](https://catalog.ngc.nvidia.com/orgs/nvidia/resources/tao_detectnet) detector which uses ResNet18 and since it is a object detection model, the output is a bounding-box on the input image surrounding the object detected, the bouding-box is predicted by calculating the x center, y center, width and height from the object, not to mention the confidence value from the output class is returned as well.
@@ -16,6 +18,8 @@ The model classes identified are:
 - 40 (Indicating the 40km/h traffic sign)
 - 60 (Indicating the 60km/h traffic sign)
 
+___
+
 ## Building the model
 
 The model was created using the transfer learning toolkit from Nvidia called [TAO Toolkit](https://developer.nvidia.com/tao-toolkit) with a [Roboflow Dataset](https://roboflow.com/). The raise of the dataset is documented on the [Dataset]() section. The main reference used for the traffic sign detector was based on an article called [Building Custom Computer Vision Models with NVIDIA TAO Toolkit and Roboflow](https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/) and a repository [tao-toolkit-with-roboflow](https://github.com/roboflow-ai/tao-toolkit-with-roboflow) which used TAO toolkit to create a yolo_v4 based model using transfer learning.
@@ -25,6 +29,8 @@ In our case the steps were the same but the neural networks detector used was De
 The notebook from our project is on Github on this link:
 
 - **[Project Notebook](https://github.com/pfeinsper/NVIDIA/blob/main/transfer-learning/transfer_learning_tutorial.ipynb)**
+
+___
 
 ## Model Usage
 
@@ -437,6 +443,8 @@ python3 deepstream_usb_camera_with_custom_model.py /dev/{USB_CAMERA_VIDEO_PATH}
 After the algorithm execution you should see a new window like the image below:
 
 ![Custom Model](https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/custom_model.jpeg?raw=true)
+
+___
 
 ## Detailed Transfer Learning
 
