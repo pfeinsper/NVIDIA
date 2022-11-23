@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="assets/favicon.png" rel="icon"/>
+<link href="assets/NVLogo_2D.png" rel="icon"/>
 <meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
 <title>Nvidia HPC Autopilot</title>
 <link href="assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
@@ -39,7 +39,7 @@
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nvidia HPC Autopilot" class="md-header__button md-logo" data-md-component="logo" href="." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="assets/NVLogo_2D.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -91,7 +91,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Nvidia HPC Autopilot" class="md-nav__button md-logo" data-md-component="logo" href="." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="assets/NVLogo_2D.png"/>
 </a>
     Nvidia HPC Autopilot
   </label>
@@ -207,6 +207,7 @@
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/jetbot.png?raw=true"><img align="left" alt="Jetbot" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/jetbot.png?raw=true"/></a></p>
 <p>This is an open-source project of a MVP (Minimum Valiable Product) of a autonomous car using <a href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/">Jetson Nano</a> that respects brazilian traffic signs and integrates some Nvidia tools, such as <a href="https://developer.nvidia.com/deepstream-sdk">DeepStream SDK</a>, <a href="https://www.nvidia.com/en-us/gpu-cloud/">Nvidia GPU Cloud</a>, <a href="https://developer.nvidia.com/tensorrt">TensorRT</a>, <a href="https://developer.nvidia.com/cuda-toolkit">CUDA Toolkit</a>, <a href="https://developer.nvidia.com/nvidia-triton-inference-server">Triton</a> and <a href="https://jetbot.org/master/">Jetbot</a> as the main tool for the project. </p>
 <p>The main focus is to share this project with the community of developers so that can it be used as a starter for a autonomous vehicle or other robotics and computer vision projects.</p>
+<hr/>
 <h2 id="pre-requisites">Pre-requisites</h2>
 <ul>
 <li>Jetson Nano 4GB</li>
@@ -218,6 +219,7 @@
 <p>At first our recommendation is to follow the basic Jetbot setup from this website <a href="https://jetbot.org/master/">https://jetbot.org/master/</a>, since it shows how to build the robot, install the Jetpack OS on Jetson Nano and assemble the hardware and software of the robot.</p>
 <p>So just to make sure, the Jetbot tutorial parts you need to follow are <a href="" title="https://jetbot.org/master/bill_of_materials.html">Bill of Materials</a>, <a href="" title="https://jetbot.org/master/hardware_setup.html">Hardware Setup</a> and then for Software setup you can choose either to use <a href="" title="https://jetbot.org/master/software_setup/sd_card.html">SD Card Image</a> or <a href="" title="https://jetbot.org/master/software_setup/docker.html">Docker Container</a>. We recommend you to use the Docker Container setup, because the grapical interface takes a reasonable amount of CPU from the Jetson Nano.</p>
 </div>
+<hr/>
 <h2 id="project-architecture">Project Architecture</h2>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/architechture.png?raw=true"><img alt="Architecture" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/architechture.png?raw=true"/></a></p>
 <p>The main workflow of the project shown on this figure above. The architecture of the project is based on four sections:</p>

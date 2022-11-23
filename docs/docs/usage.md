@@ -35,7 +35,7 @@ If you've never used `screen` before, you can follow this tutorial on how to use
 [https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/](https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/)
 
 
-Then you need to clone the camera image source to other two sources, using both `/dev/video0`, `/dev/video1` and `/dev/video2`. For this step you need to install `ffmpeg` dependency.
+On one screen terminal you need to clone the camera image source to other two sources, using both `/dev/video0`, `/dev/video1` and `/dev/video2`. For this step you need to install `ffmpeg` dependency.
 
 ```bash
 xhost +
@@ -48,6 +48,8 @@ sudo modprobe v4l2loopback devices=2
 ```bash
 ffmpeg -f video4linux2 -i /dev/video0 -codec copy -f v4l2 /dev/video1 -codec copy -f v4l2 /dev/video2
 ```
+
+Opening another screen terminal you need to run this commands below.
 
 ```bash
 cd pfe/mqtt/
@@ -90,6 +92,8 @@ In this part of the tutorial you will need to install nvidia-docker, for this yo
 The docker image that you will need for the project is located on DockerHub on this link below:
 
 [https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton](https://hub.docker.com/r/edgardaon/jetson-deepstream-6.0-triton)
+
+Open another screen terminal and run the docker commands.
 
 ```bash
 docker run -it --net=host --runtime nvidia --privileged -e DISPLAY=$DISPLAY -w /opt/nvidia/deepstream/deepstream-6.0 -v /tmp/.X11-unix/:/tmp/.X11-unix -v /tmp/argus_socket:/tmp/argus_socket edgardaon/jetson-deepstream-6.0-triton:version1.1 /bin/bash
@@ -146,7 +150,7 @@ So after all these steps we have all setup and we just need to execute and integ
 ls /dev/video*
 ```
 
-Next step is to execute another terminal with the same docker container using docker exec:
+Next step is to execute another screen terminal with the same docker container using docker exec:
 
 ```
 docker exec -ti CONTAINER_ID /bin/bash

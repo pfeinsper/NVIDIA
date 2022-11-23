@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/favicon.png" rel="icon"/>
+<link href="../assets/NVLogo_2D.png" rel="icon"/>
 <meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
 <title>Neural Networks - Nvidia HPC Autopilot</title>
 <link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
@@ -39,7 +39,7 @@
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nvidia HPC Autopilot" class="md-header__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -91,7 +91,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Nvidia HPC Autopilot" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
     Nvidia HPC Autopilot
   </label>
@@ -229,6 +229,7 @@
 <p class="admonition-title">REMEMBER</p>
 <p>The section that explains the detailed transfer learning you can run in your own computer. But the section of the Model Usage is executed on the docker container mentioned on the Usage page.</p>
 </div>
+<hr/>
 <h2 id="model-overview">Model Overview</h2>
 <p>This neural network model is based on a object detection model from Nvidia GPU Cloud called <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/models/dashcamnet">DashCamNet</a>, which is built based on Nvidia <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/resources/tao_detectnet">DetectNet_v2</a> detector which uses ResNet18 and since it is a object detection model, the output is a bounding-box on the input image surrounding the object detected, the bouding-box is predicted by calculating the x center, y center, width and height from the object, not to mention the confidence value from the output class is returned as well.</p>
 <p>The model classes identified are:</p>
@@ -237,6 +238,7 @@
 <li>40 (Indicating the 40km/h traffic sign)</li>
 <li>60 (Indicating the 60km/h traffic sign)</li>
 </ul>
+<hr/>
 <h2 id="building-the-model">Building the model</h2>
 <p>The model was created using the transfer learning toolkit from Nvidia called <a href="https://developer.nvidia.com/tao-toolkit">TAO Toolkit</a> with a <a href="https://roboflow.com/">Roboflow Dataset</a>. The raise of the dataset is documented on the <a href="">Dataset</a> section. The main reference used for the traffic sign detector was based on an article called <a href="https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/">Building Custom Computer Vision Models with NVIDIA TAO Toolkit and Roboflow</a> and a repository <a href="https://github.com/roboflow-ai/tao-toolkit-with-roboflow">tao-toolkit-with-roboflow</a> which used TAO toolkit to create a yolo_v4 based model using transfer learning.</p>
 <p>In our case the steps were the same but the neural networks detector used was DetectNet_v2 instead of yolo_v4.</p>
@@ -244,6 +246,7 @@
 <ul>
 <li><strong><a href="https://github.com/pfeinsper/NVIDIA/blob/main/transfer-learning/transfer_learning_tutorial.ipynb">Project Notebook</a></strong></li>
 </ul>
+<hr/>
 <h2 id="model-usage">Model Usage</h2>
 <p>If you want to just use our model, you can just download these files below on your Jetson device, on the other hand, if you want to build your own model you can follow the Detailed Transfer learning section below:</p>
 <table>
@@ -661,6 +664,7 @@ eps=0.2
 </code></pre></div>
 <p>After the algorithm execution you should see a new window like the image below:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/custom_model.jpeg?raw=true"><img alt="Custom Model" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/custom_model.jpeg?raw=true"/></a></p>
+<hr/>
 <h2 id="detailed-transfer-learning">Detailed Transfer Learning</h2>
 <p>Since you want to build a custom model by yourself you can follow the notebooks from the links below and download the files referenced, so that you can follow the correct steps:</p>
 <ul>

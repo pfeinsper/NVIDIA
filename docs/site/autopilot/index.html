@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/favicon.png" rel="icon"/>
+<link href="../assets/NVLogo_2D.png" rel="icon"/>
 <meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
 <title>Autopilot - Nvidia HPC Autopilot</title>
 <link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
@@ -39,7 +39,7 @@
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nvidia HPC Autopilot" class="md-header__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -91,7 +91,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Nvidia HPC Autopilot" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
     Nvidia HPC Autopilot
   </label>
@@ -205,6 +205,7 @@
 </a>
 <h1 id="autopilot">Autopilot</h1>
 <p>For the autopilot section of the project we built a line tracker algorithm using pure computer vision. This piece of code use OpenCV and it creates a mask to identify the yellow line of the road, as long as the yellow line is detected, we use a linear regression to preview all the points that the robot should follow and by using the angle from linear regression the robot calculates the best steering gain, speed gain and derivative gain using a control equation. Finally these informations are sent on a asynchronous message broker to the robot motors.</p>
+<hr/>
 <h2 id="control-parameters">Control parameters</h2>
 <p>From this code, Jetbot provides three parameters from the robot motors: </p>
 <ul>
@@ -229,6 +230,7 @@
 <li><a href="https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/main.py">Computer Vision using Broker MQTT</a></li>
 <li><a href="https://github.com/pfeinsper/NVIDIA/blob/main/mqtt/lanedetector.py">Just the Computer Vision algorithm</a></li>
 </ul>
+<hr/>
 <h2 id="running-the-autopilot">Running the autopilot</h2>
 <p>In order to run this project section you just need to run the python code remembering to change the camera input number on the code and change the IP ADDRESS too, these steps are shown below:</p>
 <p>Verifing if the camera input number is correct:</p>

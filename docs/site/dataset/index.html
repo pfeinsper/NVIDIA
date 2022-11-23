@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/favicon.png" rel="icon"/>
+<link href="../assets/NVLogo_2D.png" rel="icon"/>
 <meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
 <title>Dataset - Nvidia HPC Autopilot</title>
 <link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
@@ -39,7 +39,7 @@
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nvidia HPC Autopilot" class="md-header__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -91,7 +91,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Nvidia HPC Autopilot" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Nvidia HPC Autopilot">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<img alt="logo" src="../assets/NVLogo_2D.png"/>
 </a>
     Nvidia HPC Autopilot
   </label>
@@ -123,9 +123,26 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Dataset
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Dataset
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#traffic-sign-photos">
+    Traffic Sign Photos
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../network/">
@@ -156,6 +173,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#traffic-sign-photos">
+    Traffic Sign Photos
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -167,6 +195,38 @@
 </a>
 <h1 id="building-the-dataset">Building the Dataset</h1>
 <p>For the project dataset we uses <a href="https://roboflow.com/">Roboflow Dataset</a>, a online platform to build your own image dataset to work with computer vision models. In the case of the project we used roboflow to upload the traffic signs images and draw the bounding-box around the traffic signs for them to be identified on the training and testing from the model. </p>
+<p>To build the dataset we used the robot camera to take photos of the traffic signs on the test sight and used roboflow to draw the bounding box on the images to identify where the traffic sign is, you can see some examples of the images we've taken below.</p>
+<hr/>
+<h3 id="traffic-sign-photos">Traffic Sign Photos</h3>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/pare.png?raw=true"><img alt="pare" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/pare.png?raw=true" width="300"/></a>
+</p>
+<figcaption>Stop sign</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/40.png?raw=true"><img alt="40" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/40.png?raw=true" width="300"/></a>
+</p>
+<figcaption>40km/h sign</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/60.png?raw=true"><img alt="60" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/60.png?raw=true" width="300"/></a>
+</p>
+<figcaption>60km/h sign</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/right.png?raw=true"><img alt="right" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/right.png?raw=true" width="300"/></a>
+</p>
+<figcaption>Turn right sign</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/left.png?raw=true"><img alt="left" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/left.png?raw=true" width="300"/></a>
+</p>
+<figcaption>Turn left sign</figcaption>
+</figure>
+<p>After uploading all traffic sign images we used roboflow to build a data augumentation growing the dataset with more images, in order to make the model more precise and robust, you can see the data augumentation page after uploading all the images, as shown below.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://blog.roboflow.com/content/images/size/w1000/2022/08/Screen-Shot-2022-08-11-at-1.20.08-AM.webp"><img alt="https://blog.roboflow.com/content/images/size/w1000/2022/08/Screen-Shot-2022-08-11-at-1.20.08-AM.webp" src="https://blog.roboflow.com/content/images/size/w1000/2022/08/Screen-Shot-2022-08-11-at-1.20.08-AM.webp"/></a></p>
+<p>You can find all these steps on the "Building Custom Computer Vision Models with NVIDIA TAO Toolkit and Roboflow" tutorial, on the link below.</p>
+<p><a href="https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/">https://blog.roboflow.com/nvidia-tao-toolkit-roboflow/</a></p>
 </article>
 </div>
 </div>
