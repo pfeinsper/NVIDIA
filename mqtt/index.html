@@ -171,7 +171,7 @@
 <p class="admonition-title">Note</p>
 <p>In this type of asynchronous architecture, the publisher is the service that produces the messages in the broker, indicating that a new event has happened. In the case of the project, JetBot is responsible for sending the image update event processed by the Detection, Classification and Autopilot service. The subscriber consumes messages from the broker and starts the process flow according to its mission.</p>
 </div>
-<p>So a very useful tool for the project was to use the <a href="https://nodered.org/">Node-Red</a> with the <a href="https://mqtt.org/">MQTT protocol</a> for IoT messaging communication between the robot and the classifier. </p>
+<p>So a very useful tool for the project was to use the <a href="https://nodered.org/">Node-Red</a> with the <a href="https://mqtt.org/">MQTT protocol</a> for IoT messaging communication between the robot and the detector. </p>
 <p>The archtecture of the IoT messaging can be seen on the figure below:</p>
 <p><a class="glightbox" data-desc-position="bottom" data-description="" data-height="auto" data-title="" data-width="100%" href="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/nodered.png?raw=true"><img alt="MQTT messaging" src="https://github.com/pfeinsper/NVIDIA/blob/gh-pages/images/nodered.png?raw=true"/></a></p>
 <p>The block in blue, named “Sensor 1“ is an ‘inject’ block, which sends a msg.payload and a msg.topic, the message content and its origin, respectively. The message sent, msg.payload, can be in different formats, including JSON, which has the greatest compatibility with Python, which is the language being used to develop the project.</p>
