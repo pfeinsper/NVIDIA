@@ -30,8 +30,7 @@ The main workflow of the project shown on this figure above. The architecture of
 - Autopilot 
 - Neural Networks
     - Detector
-    - Classifier
 - Broker MQTT 
 - Controller
 
-So the robot starts following the road using computer vision and the controller parameters to stay on track, as the Jetbot sees any traffic sign, for instance a stop sign, the robot immediately detect the stop sign as a roadsign from the detector model and uses it to classify the roadsign as a stop sign by the classifier model. After this, the classifier connects with a broker that uses asyncronous message to communicate with the autopilot and tells the robot to stop, so the motors receive a speed gain of zero and the robot stops on the track, respecting the traffic sign identified.
+So the robot starts following the road using computer vision and the controller parameters to stay on track, as the Jetbot sees any traffic sign, for instance a stop sign, the robot immediately detect the stop sign as a roadsign from the detector model and uses it to detect the roadsign as a stop sign by the traffic sign model. After this, the detector connects with a broker that uses asyncronous message to communicate with the autopilot and tells the robot to stop, so the motors receive a speed gain of zero and the robot stops on the track, respecting the traffic sign identified.

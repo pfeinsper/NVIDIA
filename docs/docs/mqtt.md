@@ -5,7 +5,7 @@ Currently, in the software architecture scenario, it is very common that the arc
 !!! note  
     In this type of asynchronous architecture, the publisher is the service that produces the messages in the broker, indicating that a new event has happened. In the case of the project, JetBot is responsible for sending the image update event processed by the Detection, Classification and Autopilot service. The subscriber consumes messages from the broker and starts the process flow according to its mission.
 
-So a very useful tool for the project was to use the [Node-Red](https://nodered.org/) with the [MQTT protocol](https://mqtt.org/) for IoT messaging communication between the robot and the classifier. 
+So a very useful tool for the project was to use the [Node-Red](https://nodered.org/) with the [MQTT protocol](https://mqtt.org/) for IoT messaging communication between the robot and the detector. 
 
 The archtecture of the IoT messaging can be seen on the figure below:
 
